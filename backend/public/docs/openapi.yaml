@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: 'Management Laundry'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: tyshawn57@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: 'r=\eA+t/@/E?'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

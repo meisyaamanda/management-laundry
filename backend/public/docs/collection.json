@@ -10,17 +10,17 @@
     ],
     "info": {
         "name": "Management Laundry",
-        "_postman_id": "874d579f-8adc-4439-8f20-06c5279c828f",
+        "_postman_id": "a49834ea-22ec-416e-886a-64b1fd23b968",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
+            "name": "Authentication",
             "description": "",
             "item": [
                 {
-                    "name": "POST api\/login",
+                    "name": "Login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -41,7 +41,66 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"tyshawn57@example.com\",\"password\":\"r=\\\\eA+t\\\/@\\\/E?\"}"
+                            "raw": "{\"email\":\"corwin.chanel@example.com\",\"password\":\"`3Uzuwi`q6\\\\o7\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/destroy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/destroy"
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"roxanne36@example.com\",\"password\":\"AS?f5]Dx;.V\"}"
                         },
                         "description": "",
                         "auth": {

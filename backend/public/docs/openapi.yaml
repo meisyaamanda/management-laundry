@@ -9,13 +9,13 @@ servers:
 paths:
   /api/login:
     post:
-      summary: ''
-      operationId: postApiLogin
+      summary: Login
+      operationId: login
       description: ''
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Authentication
       requestBody:
         required: true
         content:
@@ -26,12 +26,52 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: tyshawn57@example.com
+                  example: corwin.chanel@example.com
                   nullable: false
                 password:
                   type: string
                   description: ''
-                  example: 'r=\eA+t/@/E?'
+                  example: '`3Uzuwi`q6\o7'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: Logout
+      operationId: logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/destroy:
+    delete:
+      summary: 'Delete User'
+      operationId: deleteUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: roxanne36@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: 'AS?f5]Dx;.V'
                   nullable: false
               required:
                 - email
@@ -39,5 +79,5 @@ paths:
       security: []
 tags:
   -
-    name: Endpoints
+    name: Authentication
     description: ''

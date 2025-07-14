@@ -1,9 +1,28 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
+import { Dashboard } from "./pages/dashboard";
+import User from "./pages/user";
+import SignIn from "./pages/signin";
+import RootLayout from "./layout/RootLayout";
 
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="admin" element={<User />} />
+        <Route path="signin" element={<SignIn />} />
+      </Route>
+    )
+  );
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-3xl">Hello World</h1>
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }

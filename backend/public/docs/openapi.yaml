@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: 'Management Laundry'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: Login
+      operationId: login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: corwin.chanel@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: '`3Uzuwi`q6\o7'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: Logout
+      operationId: logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/destroy:
+    delete:
+      summary: 'Delete User'
+      operationId: deleteUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: roxanne36@example.com
+                  nullable: false
+                password:
+                  type: string
+                  description: ''
+                  example: 'AS?f5]Dx;.V'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Authentication
+    description: ''
